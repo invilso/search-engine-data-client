@@ -44,7 +44,7 @@ async def a_req_get(session, url):
 def req_get(session, url):
     try:
         return session.get(url)
-    except ConnectionError | requests.ReadTimeout:
+    except (ConnectionError, requests.ReadTimeout):
         print('Error Connection')
         time.sleep(5)
         return req_get(session, url)
