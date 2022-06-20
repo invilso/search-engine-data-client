@@ -30,7 +30,7 @@ def get_any_query():
     return json.loads(requests.get(f'{config.PROTOCOL}://{config.IP}:{config.PORT}/parser/get-any-query/').text)['result']
 
 def write_to_site_db(database: list):
-    return json.loads(requests.post(f'{config.PROTOCOL}://{config.IP}:{config.PORT}/parser/get-any-query/', data=json.dumps(database)).text)['status']
+    return json.loads(requests.post(f'{config.PROTOCOL}://{config.IP}:{config.PORT}/parser/add-to-db/', data=json.dumps(database)).text)['status']
 
 async def a_req_get(session, url):
     try:
