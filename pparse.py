@@ -329,7 +329,7 @@ def parse_query(query: str):
     database.append(get_page_info(p))
     link = p.get_next_page()
     while link:
-        time.sleep(random.randint(15, 35))
+        time.sleep(random.randint(10, 25))
         link = go_to_next_page(link, database)
     return database
 
@@ -365,6 +365,6 @@ def main():
             query_data = add_data_to_dicts_in_list(query_data, 'query', query['query'])
             query_data = clean_database(query_data)
             write_to_site_db(database=query_data)
-        time.sleep(random.randint(60, 90))
+        time.sleep(random.randint(30, 60))
     
 
