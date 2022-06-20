@@ -24,7 +24,7 @@ def print_args(func):
     return wrapper
 
 def is_website_exist_in_db(website: str):
-    return json.loads(requests.post(f'{config.PROTOCOL}://{config.IP}:{config.PORT}/parser/is-website-exist/', data=json.dumps({'website': website})).text)['status']
+    return False
 
 def get_any_query():
     return json.loads(requests.get(f'{config.PROTOCOL}://{config.IP}:{config.PORT}/parser/get-any-query/').text)['result']
